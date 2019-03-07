@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./common/css/reset.css">
+  <link rel="stylesheet" href="./common/css/common.css">
+  <title>APA TEMPLATE</title>
+</head>
+<body class="top-page">
+
+  <h1 class="top-siteName">APA TEMPLATE</h1>
+
+  <div class="top-fullscreen">
+    <ul>
+      <li><a href="" class="bottom">メニュー1</a></li>
+      <li><a href="">メニュー2</a></li>
+      <li><a href="">メニュー3</a></li>
+      <li><a href="">メニュー4</a></li>
+    </ul>
+  </div>
+
+<script src="./common/js/jquery-3.3.1.min.js"></script>
+<script>
+$(function () {
+	var num = Math.floor(Math.random()*(3-1)+1);
+  num = ('00'+num).slice(-3);
+  console.log(num);
+  $('body.top-page').css('background-image', 'url(./common/img/top'+num+'.jpg)');
+});
+</script>
+</body>
+</html>
