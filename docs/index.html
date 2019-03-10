@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./common/css/apa.css">
+  <title>APA TEMPLATE</title>
+</head>
+<body class="top-page">
+  <div class="top-page__inner">
+    <h1 class="top-siteName">APA TEMPLATE</h1>
+
+    <div class="top-nav">
+      <ul>
+        <li class="button"><a href="./page/_category/_sample/index.html">メニュー1</a></li>
+        <li class="button"><a href="./page/_category/_sample/index.html">メニュー2</a></li>
+        <li class="button"><a href="./page/_category/_sample/index.html">メニュー3</a></li>
+        <li class="button"><a href="./page/_category/_sample/index.html">メニュー4</a></li>
+      </ul>
+    </div>
+  </div>
+<style>
+.top-page:before{
+  content: '';
+  background: inherit;/*.bgImageで設定した背景画像を継承する*/
+
+}
+</style>
+<script src="./common/js/jquery-3.3.1.min.js"></script>
+<script>
+$(function () {
+	var num = Math.floor(Math.random()*(3-1)+1);
+  num = ('00'+num).slice(-3);
+  console.log(num);
+  $('body.top-page').css('background-image', 'url(./common/img/top'+num+'.jpg)');
+});
+</script>
+</body>
+</html>
