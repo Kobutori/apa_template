@@ -51,48 +51,18 @@ console.log(loadScript());
 */
 
 
-//header
-const HeaderComp = {
-    props: ['root'],
-    template: `
-    <header>
-    <ul>
-    <li><a :href="root+'index.html'">{{root}}index.html</a></li>
-  </ul>
-    朝起きたら{{root}}といいましょう。
-    </header>`,
-};
-
-// Headerコンポーネント
-new Vue({
-    el: '#header',
-    data: {
-      root: rootDir,
-    },
-    components: {
-      'header-component': HeaderComp
-    }
-});
-
-Vue.component('my-test',{
-    template: `
-<header>
-<ul>
-<li><a :href="root+'index.html'">{{root}}index.html</a></li>
-</ul>
-朝起きたら{{list}}といいましょう。
-</header>
-    `,
-    data () {
-        return{
-            root: rootDir,
-            list: [],
-        }
-    },
-});
-new Vue({ el: '#app' });
 
 
+/*ヘッダーインクルード*/
+if( document.getElementById("header") != null ){
+  var componentRoot = new Vue({
+    template:   '<header class="header"><div class="site">' +
+      '<a href="{jsroot}">APA</a>' +
+    '</div></header>',
+  });
+  // 要素にマウントする
+  componentRoot.$mount( '#header' );
+}
 
 
 

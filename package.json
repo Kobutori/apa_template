@@ -4,20 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "run-s clean copy build:*",
-    "build:scss": "node-sass --importer node_modules/node-sass-glob-importer/dist/cli.js -o build src/common/scss/apa.scss build/common/css/apa.css" ,
-    "build:postcss": "postcss build/common/css/apa.css -o build/common/css/apa.css -m -u autoprefixer css-mqpacker csswring",
-    "watch": "run-p watch:*",
-    "watch:scss": "node-sass src/common/scss/apa.scss build/common/css/apa.css -w",
-    "watch:postcss": "postcss build/common/css/apa.css -o build/common/css/apa.css -m -u autoprefixer css-mqpacker csswring -w",
-    "watch:static": "cpx src/**/*.html build -w",
-    "watch:image": "cpx src/**/*.{jpg,gif,png} build -w",
-    "dev": "run-p watch:scss",
+    "build": "run-s clean copy css:*",
+	  
+    "css": "run-p css:*",
+    "css:scss": "node-sass --importer node_modules/node-sass-glob-importer/dist/cli.js -o build src/common/scss/apa.scss build/common/css/apa.css",
+    "css:postcss": "postcss build/common/css/apa.css -o build/common/css/apa_min.css -m -u autoprefixer css-mqpacker csswring",
+	  
     "copy": "run-p copy:*",
     "copy:html": "cpx src/**/*.html build",
-    "copy:content": "cpx src/**/*.{jpg,gif,png,mp4} build",
+    "copy:media": "cpx src/**/*.{jpg,gif,png,mp4} build",
     "copy:libcss": "cpx src/common/scss/lib/*.css build/common/css",
     "copy:js": "cpx src/**/*.js build",
+	  
+    "watch": "run-p watch:*",
+    "watch:scss2": "onchange src/**/*.scss -- npm run css:scss",
+    "watch:postcss": "onchange build/common/css/apa.css -- npm run css:postcss",
+	"watch:html": "onchange src/**/*.html -- npm run copy:html",
+	"watch:media": "onchange src/**/*.{jpg,gif,png,mp4} -- npm run copy:media",
+	  
+    "dev": "run-p watch:*",
     "clean": "rimraf build"
   },
   "author": "",
@@ -32,6 +37,7 @@
     "node-sass": "^4.11.0",
     "node-sass-glob-importer": "^5.3.0",
     "npm-run-all": "^4.1.5",
+    "onchange": "^5.2.0",
     "postcss-cli": "^6.1.2",
     "rimraf": "^2.6.3"
   },
