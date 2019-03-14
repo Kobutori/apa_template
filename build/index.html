@@ -7,34 +7,146 @@
   <link rel="stylesheet" href="./common/css/apa.css">
   <title>APA TEMPLATE</title>
 </head>
-<body class="top-page">
-  <div class="top-page__inner">
-    <h1 class="top-siteName">APA TEMPLATE</h1>
 
-    <div class="top-nav">
-      <ul>
-        <li class="button"><a href="./page/category/sample/index.html">メニュー1</a></li>
-        <li class="button"><a href="./page/category/sample/index.html">メニュー2</a></li>
-        <li class="button"><a href="./page/category/sample/index.html">メニュー3</a></li>
-        <li class="button"><a href="./page/category/sample/index.html">メニュー4</a></li>
-      </ul>
-    </div>
-  </div>
+
+<body class="st-fullScreen">
+<header>
+    <aside class="side">
+        <input type="checkbox" id="hamburger">
+        <label class="hamburger__cl" for="hamburger">
+            <span class="hamburger__cl--top"></span>
+            <span class="hamburger__cl--middle"></span>
+            <span class="hamburger__cl--bottom"></span>
+            <span class="hamburger__cl--text">メニュー</span>
+        </label>
+        <nav class="side__nav" style="display: none;">
+            <ul class="sp__nav__menu">
+                <li class="sp__nav__menu__block"><a href="">aaaaa</a></li>
+                <li class="sp__nav__menu__block"><a href="">aaaaaa</a></li>
+                <li class="sp__nav__menu__block"><a href="">aaaaa</a></li>
+                <li class="sp__nav__menu__block"><a href="">aaaaa</a></li>
+            </ul>
+        </nav>
+    </aside>
+</header>
+
+<main class="fullScreen-inner">
+<h1 class="top-siteName">APA TEMPLATE</h1>
+<div class="top-nav">
+  <ul>
+    <li class="button"><a href="./page/category/sample/index.html">メニュー1</a></li>
+    <li class="button"><a href="./page/category/sample/index.html">メニュー2</a></li>
+    <li class="button"><a href="./page/category/sample/index.html">メニュー3</a></li>
+    <li class="button"><a href="./page/category/sample/index.html">メニュー4</a></li>
+  </ul>
+	<ul>
+		<li><a href="">テスト</a></li>
+		<li><a href="">テスト</a></li>
+		<li><a href="">テスト</a></li>
+	</ul>
+</div>
+</main>
+	
+<footer>
+<aside>
+
+<p></p>
+</aside>
+</footer>
 <style>
 .top-page:before{
   content: '';
   background: inherit;/*.bgImageで設定した背景画像を継承する*/
 
 }
+	
+
+#hamburger{display:none}
+	.side{
+		position: relative;
+	}
+.hamburger__cl{
+	color:#fff;
+	display:table-cell;
+	font-size:10px;
+	text-align:center;
+	vertical-align:bottom;
+	width:50px;
+	height:45px;
+	position:absolute;
+	top:20px;
+	right:10px;}
+.hamburger__cl--top,.hamburger__cl--middle,.hamburger__cl--bottom{
+	display:block;
+	-webkit-transition:all .4s;transition:all .4s;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	position:absolute;
+	width:30px;
+	height:3px;
+	background:#fff;
+	border-radius:3px;
+	left:0;
+	right:0;
+	margin:auto}
+.hamburger__cl--text	{
+	position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+}
+.hamburger__cl--top{
+	top:0}
+.hamburger__cl--middle{
+	top:10px}
+.hamburger__cl--bottom{
+	top:20px}
+.active .hamburger__cl--top{
+	-webkit-transform:translateY(20px) rotate(-315deg);-ms-transform:translateY(12px) rotate(-315deg);transform:translateY(12px) rotate(-315deg)}
+.active .hamburger__cl--middle{
+	opacity:0}
+.active .hamburger__cl--bottom{
+	-webkit-transform:translateY(-20px) rotate(315deg);-ms-transform:translateY(-8px) rotate(315deg);transform:translateY(-8px) rotate(315deg)}
+.sp__nav__menu__block a{
+	text-decoration: none;
+	color: #fff;
+	width: 100%;
+	display: block;
+}
+.sp__nav__menu__block a:hover{
+	background-color: aquamarine;
+	-webkit-transition:all .4s;transition:all .4s;
+}
 </style>
 <script src="./common/js/jquery-3.3.1.min.js"></script>
 <script>
+//背景画像
 $(function () {
 	var num = Math.floor(Math.random()*(3-1)+1);
   num = ('00'+num).slice(-3);
   console.log(num);
-  $('body.top-page').css('background-image', 'url(./common/img/top'+num+'.jpg)');
+  $('.st-fullScreen').css('background-image', 'url(./common/img/top'+num+'.jpg)');
 });
+
+//メニュー
+$(function(){
+	$(".side__nav").hide();
+	
+
+	$("#hamburger").on("click touched", function(){
+		if($(this).prop("checked")){
+			$(".hamburger__cl").addClass("active");
+			$(".side__nav").slideDown();
+			$(".hamburger__cl--text").text("閉じる");
+		}else{
+			$(".hamburger__cl").removeClass("active");
+			$(".side__nav").slideUp();
+			$(".hamburger__cl--text").text("メニュー");
+		}
+	});
+});
+
+	
 </script>
 </body>
 </html>

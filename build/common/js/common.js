@@ -57,12 +57,13 @@ console.log(loadScript());
 if( document.getElementById("header") != null ){
   var componentRoot = new Vue({
     template:   '<header class="header"><div class="site">' +
-      '<a href="{jsroot}">APA</a>' +
+      '<a href="{jsroot}index.html">APA</a>' +
     '</div></header>',
   });
   // 要素にマウントする
   componentRoot.$mount( '#header' );
 }
+
 
 
 

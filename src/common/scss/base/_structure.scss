@@ -1,43 +1,91 @@
 @charset 'utf-8';
-/*archiveページ*/
-body.archives {
-    display: grid;
-    grid-template-columns: 1fr 750px 50px 300px 1fr;
-    grid-template-rows: auto 40px auto 40px auto;
-    background-color: #e7e5d8;
-    color:#000;
-    margin: 0;
-	
-	> .header{
-    position:-webkit-sticky;
-          position: sticky;
-          top: 0;
-          z-index: 15;
-    grid-column-start: 1;
-    grid-column-end:  -1;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    background-color: #E70012;
-    text-align: center;
 
-  }
-  > .main{
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 3;
-    grid-row-end: 4;
-  }
-  > .side{
-    grid-column-start: 4;
-    grid-column-end: 5;
-    grid-row-start: 3;
-    grid-row-end: 4;
-  }
-  > .footer{
-    grid-column-start: 1;
-    grid-column-end:  -1;
-    grid-row-start: -2;
-    grid-row-end: -1;
-    background-color: #E70012;
-  }
+.st-grid{
+	display: grid;
+    &.-archives{
+		background-color: #e7e5d8;
+		color:#000;
+		grid-template-columns: 1fr 750px 50px 300px 1fr;
+        grid-template-rows: auto 40px auto 40px auto;
+		@include pc {
+		grid-template-columns: 20px 750px 50px 300px 20px;
+		};
+		@include tab {
+		grid-template-columns: 20px 1fr 20px;
+		grid-template-rows: auto 40px auto 40px auto 40px auto;
+		};
+		@include sp {
+		grid-template-columns: 20px 1fr 20px;
+		};
+        > .header{
+            position:-webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 15;
+            grid-column-start: 1;
+            grid-column-end:  -1;
+            grid-row-start: 1;
+            grid-row-end: 2;
+			background-color: #E70012;
+			text-align: center;
+
+        }
+       > .main{
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 3;
+            grid-row-end: 4;
+		   
+        }
+       > .side{
+            grid-column-start: 4;
+            grid-column-end: 5;
+            grid-row-start: 3;
+            grid-row-end: 4;
+		   
+			@include tab {
+			grid-column-start: 2;
+			grid-column-end: 3;
+			grid-row-start: 6;
+			grid-row-end: 5;
+			};
+
+        }
+       > .footer{
+            grid-column-start: 1;
+            grid-column-end:  -1;
+            grid-row-start: -2;
+            grid-row-end: -1;
+			background-color: #E70012;
+		   	
+        }
+    }
+
+}
+
+.st-fullScreen{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    &::before{
+        background-color: rgba(0,0,0,0.4);
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: ' ';
+    }
+    > .fullScreen-inner{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translateY(-50%) translateX(-50%);
+        transform: translateY(-50%) translateX(-50%);
+    }
 }
