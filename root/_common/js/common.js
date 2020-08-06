@@ -55,17 +55,15 @@ console.log(loadScript());
 
 /*ヘッダーインクルード*/
 if( document.getElementById("header") != null ){
-  var componentRoot = new Vue({
-    template:   '<header class="header"><div class="site">' +
-      '<a href="{jsroot}index.html">APA</a>' +
+  var componentHeader = new Vue({
+    template:
+    '<header class="header"><div class="site">' +
+    '<a href="{jsroot}index.html">APA</a>' +
     '</div></header>',
   });
   // 要素にマウントする
-  componentRoot.$mount( '#header' );
+  componentHeader.$mount( '#header' );
 }
-
-
-
 
 
 
