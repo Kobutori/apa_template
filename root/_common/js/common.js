@@ -59,7 +59,24 @@ if( document.getElementById("header") != null ){
     template:
     '<header class="header"><div class="site">' +
     '<a href="{jsroot}index.html">APA</a>' +
-    '</div></header>',
+    '</div></header>' +
+    '<aside class="side">' +
+    '<input type="checkbox" id="hamburger">' +
+    '<label class="hamburger__cl" for="hamburger">' +
+    '<span class="hamburger__cl--top"></span>' +
+    '<span class="hamburger__cl--middle"></span>' +
+    '<span class="hamburger__cl--bottom"></span>' +
+    '<span class="hamburger__cl--text">メニュー</span>' +
+    '</label>' +
+    '<nav class="side__nav" style="display: none;">' +
+    '<ul class="sp__nav__menu">' +
+    '<li class="sp__nav__menu__block"><a href="">aaaaa</a></li>' +
+    '<li class="sp__nav__menu__block"><a href="">aaaaaa</a></li>' +
+    '<li class="sp__nav__menu__block"><a href="">aaaaa</a></li>' +
+    '<li class="sp__nav__menu__block"><a href="">aaaaa</a></li>' +
+    '</ul>' +
+    '</nav>' +
+    '</aside>',
   });
   // 要素にマウントする
   componentHeader.$mount( '#header' );

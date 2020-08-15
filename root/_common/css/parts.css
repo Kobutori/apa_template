@@ -1,0 +1,62 @@
+
+/*
+todo:共通commonに移動
+サイトロゴ
+*/
+body .site a{
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-family: 'Fredoka One', cursive;
+  width: 100%;
+  text-align:center;
+}
+p{
+  text-align: justify;
+}
+
+
+/*見出し*/
+.headline.-wLine{
+  padding: 10px 0;
+  margin-bottom: 20px;
+  border-top: 2px solid #212121;
+  border-bottom: 2px solid #212121;
+  color:#333;
+}
+.headline.-wLine_dot{
+  padding: 10px 0;
+  border-top: 2px dotted #212121;
+  border-bottom: 2px dotted #212121;
+  margin-bottom: 20px;
+}
+  .headline.-leftborder{
+    border-left: 5px solid #212121;
+    padding: 0 0 0 15px;
+  }
+
+/*ページタイトル*/
+.page__title{
+  color: #E70012;
+  margin-bottom:20px;
+}
+.page__title span{
+  font-size: 1.8rem;
+  display: block;
+}
+
+/*スライダー
+.ba-slider{
+  margin-bottom: 20px;
+}
+.ba-slider__label{
+  position:absolute; 
+  font-size:1rem;
+  background:#000;
+  color: #fff;
+  padding: 2px;
+}
+.ba-slider__label.before{top:0; left:0;}
+.ba-slider__label.after{top:0; right:0;}
+*/
+
