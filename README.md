@@ -1,6 +1,7 @@
 # apa_template
 
 ## 概要
+
 WEBサーバーを使わずにサイトを構築するためのテンプレートです。  
 基本的に、テンプレートをコピペして手動でHTMLを更新していきます。  
 
@@ -10,12 +11,18 @@ WEBサーバーを使わずにサイトを構築するためのテンプレー�
 
 |ページ説明|URL|
 |:---|:---|
-|TOPページ|https://kobutori.github.io/apa_template/build/index.html|
+|TOPページ|https://kobutori.github.io/apa_template/root/index.html|
 
 
 ##　ディレクトリ構成
 
+### 開発者
 
+
+### 使用者
+
+
+##機能概要
 
 
 
