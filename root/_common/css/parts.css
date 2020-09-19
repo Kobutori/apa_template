@@ -30,10 +30,33 @@ p{
   border-bottom: 2px dotted #212121;
   margin-bottom: 20px;
 }
-  .headline.-leftborder{
-    border-left: 5px solid #212121;
-    padding: 0 0 0 15px;
-  }
+.headline.-leftborder{
+  border-left: 5px solid #212121;
+  padding: 0 0 0 15px;
+}
+
+.headline.-intersection {
+  position: relative;
+  padding: 0.25em 1em;
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
+}
+.headline.-intersection:before, .headline.-intersection:after {
+  content: '';
+  position: absolute;
+  top: -7px;
+  width: 2px;
+  height: -webkit-calc(100% + 14px);
+  height: calc(100% + 14px);
+  background-color: black;
+}
+.headline.-intersection:before {
+  left: 7px;
+}
+.headline.-intersection:after {
+  right: 7px;
+}
+
 
 /*ページタイトル*/
 .page__title{

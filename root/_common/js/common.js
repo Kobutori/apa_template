@@ -51,7 +51,14 @@ console.log(loadScript());
 */
 
 
-
+// 画像のロールオーバー
+$(function(){
+	$('.rolloverImage img').hover(function(){
+		$(this).attr('src',$(this).attr('src').replace('_bf','_af'));
+	},function(){
+		$(this).attr('src',$(this).attr('src').replace('_af','_bf'));
+	});
+});
 
 /*ヘッダーインクルード*/
 if( document.getElementById("header") != null ){
