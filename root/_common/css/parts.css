@@ -17,9 +17,17 @@ p{
 
 
 /*見出し*/
+.headline{
+  margin-bottom: 20px;
+}
+.headline.-basic {
+  padding: 0.5em;/*文字周りの余白*/
+  color: #010101;/*文字色*/
+  background: #fff;/*背景色*/
+  border-bottom: solid 3px #f00;/*下線*/
+}
 .headline.-wLine{
   padding: 10px 0;
-  margin-bottom: 20px;
   border-top: 2px solid #212121;
   border-bottom: 2px solid #212121;
   color:#333;
@@ -28,33 +36,38 @@ p{
   padding: 10px 0;
   border-top: 2px dotted #212121;
   border-bottom: 2px dotted #212121;
-  margin-bottom: 20px;
 }
 .headline.-leftborder{
   border-left: 5px solid #212121;
   padding: 0 0 0 15px;
 }
 
-.headline.-intersection {
+
+.headline.-point_tab {
   position: relative;
-  padding: 0.25em 1em;
-  border-top: solid 2px black;
-  border-bottom: solid 2px black;
+  border-top: solid 2px #80c8d1;
+  border-bottom: solid 2px #80c8d1;
+  background: #f4f4f4;
+  line-height: 1.4;
+  padding: 0.4em 0.5em;
+  margin: 2em 0 0.5em;
 }
-.headline.-intersection:before, .headline.-intersection:after {
-  content: '';
+
+.headline.-point_tab:after {
+  /*タブ*/
   position: absolute;
-  top: -7px;
-  width: 2px;
-  height: -webkit-calc(100% + 14px);
-  height: calc(100% + 14px);
-  background-color: black;
-}
-.headline.-intersection:before {
-  left: 7px;
-}
-.headline.-intersection:after {
-  right: 7px;
+  font-family: 'Quicksand','Avenir','Arial',sans-serif;
+  font-weight: 900;
+  content: 'POINT';
+  background: #80c8d1;
+  color: #fff;
+  left: 0px;
+  bottom: 100%;
+  border-radius: 5px 5px 0 0;
+  padding: 5px 7px 3px;
+  font-size: 0.7em;
+  line-height: 1;
+  letter-spacing: 0.05em;
 }
 
 
@@ -68,6 +81,60 @@ p{
   display: block;
 }
 
+/*カラム*/
+.colums__col3{
+  -webkit-column-count:3;
+  column-count:3;
+  margin-bottom: 20px
+        }
+.colums__col3 div{
+  column-width: 25em;
+  margin: 0;
+  line-height: 1.8;
+}
+.colums__col2{
+  -webkit-column-count:2;
+  column-count:2;
+  margin-bottom: 20px
+        }
+.colums__col2 p{
+  column-width: 25em;
+  margin: 0;
+  line-height: 1.8;
+}
+.stepnum{
+  position: relative;
+}
+.stepnum span{
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px;
+  line-height: 1;
+  background-color: #fff;
+  color: #333;
+}
+.colums__col3 .stepnum span{
+    padding: 5px;
+    line-height: 1;
+} 
+
+
+/*2カラムコンテンツ*/
+.content__col2{
+  display:flex;
+}
+.content__col2 > .image{
+  flex: 1 1 50%;
+}
+.content__col2 > .text{
+  padding: 0 15px;
+  flex: 1 1 50%;
+  margin: 0;
+}
+.content__col2.-reverse{
+  flex-direction: row-reverse;
+}
 /*スライダー
 .ba-slider{
   margin-bottom: 20px;

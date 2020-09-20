@@ -14,9 +14,11 @@
 </head>
 <body>
 
-<div class="site">
-  <a href="{jsroot}index.html" target="_top">APA</a>
-</div>
+<footer class="footer">
+  <div class="copyright">
+      <p>copyright</p>
+    </div>
+</footer>
 
 <script src="../_common/js/vue.min.js"></script>
 <script src="../_common/js/jquery-3.3.1.min.js"></script>
@@ -25,7 +27,7 @@
 <script type="text/javascript">
   window.onload = function() {
       var height = document.getElementsByTagName("html")[0].scrollHeight;
-      window.parent.postMessage(["setHeight1", height], "*");
+      window.parent.postMessage(["setHeight3", height], "*");
   }
 </script>
 </body>

@@ -2,7 +2,7 @@
 function test(){
     let local = window.location;
     let myArray = local.pathname.split('\/');
-    let root = "build";//ルートディレクトリ名を指定
+    let root = "root";//ルートディレクトリ名を指定
     let indeg;
     myArray.reverse();
     for( var i=0; i<=myArray.length; i++) {
@@ -60,34 +60,54 @@ $(function(){
 	});
 });
 
-/*ヘッダーインクルード*/
-if( document.getElementById("header") != null ){
-  var componentHeader = new Vue({
-    template:
-    '<header class="header"><div class="site">' +
-    '<a href="{jsroot}index.html">APA</a>' +
-    '</div></header>' +
-    '<aside class="side">' +
-    '<input type="checkbox" id="hamburger">' +
-    '<label class="hamburger__cl" for="hamburger">' +
-    '<span class="hamburger__cl--top"></span>' +
-    '<span class="hamburger__cl--middle"></span>' +
-    '<span class="hamburger__cl--bottom"></span>' +
-    '<span class="hamburger__cl--text">メニュー</span>' +
-    '</label>' +
-    '<nav class="side__nav" style="display: none;">' +
-    '<ul class="sp__nav__menu">' +
-    '<li class="sp__nav__menu__block"><a href="">aaaaa</a></li>' +
-    '<li class="sp__nav__menu__block"><a href="">aaaaaa</a></li>' +
-    '<li class="sp__nav__menu__block"><a href="">aaaaa</a></li>' +
-    '<li class="sp__nav__menu__block"><a href="">aaaaa</a></li>' +
-    '</ul>' +
-    '</nav>' +
-    '</aside>',
+/*モーダル*/
+$(function(){
+  var mdlBtn = $('.js-imageModal'),
+      overlayOpacity = 0.8;
+      fadeTime = 500;
+  mdlBtn.on('click',function(e){
+    e.preventDefault();
+    var setMdw = $(this),
+        setImgPath = $(this).children().attr('src'),
+        setHref = setMdw.attr('href'),
+        setSource = $(setHref).html(),
+        wdHeight = $(window).height();
+
+        $('body').append('<div id="mdOverlay"></div><div id="mdWindow"><div class="mdClose">×</div><div id="contWrap"><img src="'+ setImgPath + '" class="modalImage" /></div></div>');
+        $('#mdOverlay, #mdWindow').css({display:'block',opacity:'0'});
+        $('#mdOverlay').css({height:wdHeight}).stop().animate({opacity:overlayOpacity},fadeTime);
+        $('#mdWindow').stop().animate({opacity:'1'}, fadeTime);
+
+        $('#mdOverlay, .mdClose, .modalImage').on('click', function(){
+          $('#mdWindow, #mdOverlay').stop().animate({opacity:'0'}, fadeTime, function(){
+              $('#mdOverlay, #mdWindow').remove();
+          });
+        });
   });
-  // 要素にマウントする
-  componentHeader.$mount( '#header' );
-}
+});
+
+
+
+/*Sidebarインラインフレームの高さ取得 */
+window.addEventListener('message', function(e) {
+var iframe1 = $("#header");
+var iframe2 = $("#sidebar");
+var iframe3 = $("#footer");
+var eventName = e.data[0];
+var data = e.data[1];
+switch(eventName) {
+    case 'setHeight1':
+        iframe1.height(data);
+        break;
+    case 'setHeight2':
+        iframe2.height(data);
+        break;
+    case 'setHeight3':
+        iframe3.height(data);
+        break;
+    }
+}, false);
+
 
 
 
