@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../_common/css/apa.css" media="all">
+  <link rel="stylesheet" href="../_common/css/parts.css" media="all">
+  <style>
+    body {
+      margin: 0px;
+    }
+  </style>
+</head>
+<body>
+
+<footer class="footer">
+  <div class="copyright">
+      <p>copyright</p>
+    </div>
+</footer>
+
+<script src="../_common/js/vue.min.js"></script>
+<script src="../_common/js/jquery-3.3.1.min.js"></script>
+<script src="../_common/js/ligbox.js"></script>
+<script src="../_common/js/common.js"></script>
+<script type="text/javascript">
+  window.onload = function() {
+      var height = document.getElementsByTagName("html")[0].scrollHeight;
+      window.parent.postMessage(["setHeight3", height], "*");
+  }
+</script>
+</body>
+</html>
