@@ -201,6 +201,30 @@ color: #fff;
 .content__col2.-reverse{
   flex-direction: row-reverse;
 }
+
+/*QA*/
+.qaContainer dt {
+padding: 10px 10px 10px 35px;
+border-radius: 5px;
+background: #cce6ff;
+text-indent: -25px;
+}
+.qaContainer dt:before {
+content: "Q.";
+font-weight: bold;
+margin-right: 7px;
+}
+.qaContainer dd {
+margin: 20px 10px 40px 35px;
+text-indent: -25px;
+}
+.qaContainer dd:before {
+content: "A.";
+color: #1771c6;
+font-weight: bold;
+margin-right: 7px;
+}
+
 /*スライダー
 .ba-slider{
   margin-bottom: 20px;
