@@ -208,6 +208,10 @@ body {
   font-size: 1.6rem;
   /* 16px*/
   line-height: 2; }
+  
+video{
+  width: 100%;
+}
 
 .top-siteName {
   color: #fff;

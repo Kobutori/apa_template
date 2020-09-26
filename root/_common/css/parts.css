@@ -225,7 +225,20 @@ color: #1771c6;
 font-weight: bold;
 margin-right: 7px;
 }
-
+.colImage{
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.colImage.-col2 > *{
+  width: 49%;
+}
+.colImage.-col3 > *{
+  width: 32%;
+}
+.colImage.-col4 > *{
+  width: 24%;
+}
 /*スライダー
 .ba-slider{
   margin-bottom: 20px;
